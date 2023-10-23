@@ -15,7 +15,17 @@ class ClientsController extends Controller
             ->setStatusCode(500)
             ->header('Content-type', 'application/json');*/
 
-        return response('<h1>Hello World!</h1>', 500, ['Content-type' => 'text/html']);
+        //return response('<h1>Hello World!</h1>', 500, ['Content-type' => 'text/html']);
+
+        $clients = [
+            ['name' => ' Danilo', 'age' => 32],
+            ['name' => 'Samara', 'age' => 28],
+        ];
+
+        //Já retorna como json
+        //return $clients;
+
+        return response()->json($clients);
     }
     public function create(Request $request)
     {
