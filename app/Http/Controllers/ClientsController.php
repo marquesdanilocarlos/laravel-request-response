@@ -3,9 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ClientsController extends Controller
 {
+
+    public function index(Response $response)
+    {
+        /*return $response
+            ->setContent('<h1>Hello World!</h1>')
+            ->setStatusCode(500)
+            ->header('Content-type', 'application/json');*/
+
+        return response('<h1>Hello World!</h1>', 500, ['Content-type' => 'text/html']);
+    }
     public function create(Request $request)
     {
         echo $request->path();

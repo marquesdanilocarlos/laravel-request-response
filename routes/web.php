@@ -17,5 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/clients', [\App\Http\Controllers\ClientsController::class, 'create'])->name('clients.create');
+Route::get('/clients', [\App\Http\Controllers\ClientsController::class, 'index'])->name('clients.index');
+Route::get('/clients/create', [\App\Http\Controllers\ClientsController::class, 'create'])->name('clients.create');
 Route::post('/clients', [\App\Http\Controllers\ClientsController::class, 'store'])->name('clients.store');
