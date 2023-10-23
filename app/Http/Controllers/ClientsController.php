@@ -33,7 +33,10 @@ class ClientsController extends Controller
             dd('Nome não tem valor');
         }
 
-        dd('Tudo certo');
+        if ($request->hasFile('photo')) {
+            dump($request->file('photo')->path(), $request->file('photo')->extension());
+            dump($request->file('photo')->store());
+        }
     }
 
     public function storeApi(Request $request)
