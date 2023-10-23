@@ -1,3 +1,5 @@
+{{request()->path()}}
+
 <form action="{{route('clients.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <label for="name">Nome:</label>

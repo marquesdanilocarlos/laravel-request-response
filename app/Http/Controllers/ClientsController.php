@@ -6,8 +6,16 @@ use Illuminate\Http\Request;
 
 class ClientsController extends Controller
 {
-    public function create()
+    public function create(Request $request)
     {
+        echo $request->path();
+        dump($request->is('clients'));
+        dump($request->url());
+        dump($request->fullUrl());
+        dump($request->method());
+        dump($request->isMethod('post'));
+        dump($request->header());
+        dump($request->hasHeader('cookie'));
         return view('create');
     }
 
