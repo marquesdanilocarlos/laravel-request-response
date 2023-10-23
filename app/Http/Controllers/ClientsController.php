@@ -21,6 +21,19 @@ class ClientsController extends Controller
         dump($request->all());
         dump($request->except('_token'));
         dump($request->only('age'));
+
+        dump($request->query('name', 'nenhum dado'));
+        dump($request->query());
+
+        if (!$request->has('name')) {
+            dd('Não existe nome');
+        }
+
+        if (!$request->filled('name')) {
+            dd('Nome não tem valor');
+        }
+
+        dd('Tudo certo');
     }
 
 }
