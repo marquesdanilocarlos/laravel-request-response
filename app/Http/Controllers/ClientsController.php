@@ -36,4 +36,9 @@ class ClientsController extends Controller
         dd('Tudo certo');
     }
 
+    public function storeApi(Request $request)
+    {
+        dd($request->all());
+    }
+
 }
