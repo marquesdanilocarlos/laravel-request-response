@@ -16,7 +16,11 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->input('name'), $request->input('age'));
+        dump($request->input('name'), $request->input('age'));
+        dump($request->name, $request->age);
+        dump($request->all());
+        dump($request->except('_token'));
+        dump($request->only('age'));
     }
 
 }
